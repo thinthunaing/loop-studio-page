@@ -1,0 +1,615 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+:root {
+    --clr-dark: 0, 0%, 0%;
+    --clr-white: 0, 0%, 100%;
+    --clr-gray: 0, 0%, 55%;
+    --clr-vgray:0, 0%, 41%;
+
+     /* font-sizes */
+     --fs-900: 9.375rem;
+     --fs-800: 6.25rem;
+     --fs-700: 3.5rem;
+     --fs-600: 2rem;
+     --fs-500: 1.75rem;
+     --fs-400: 1.125rem;
+     --fs-300: 1rem;
+     --fs-200: 0.938rem;
+     --fs-100:0.75rem;
+     
+     /* font-families */
+     --ff-alata: "Alata", sans-serif;
+     --ff-sans-jose: "Josefin Sans", sans-serif;
+
+}
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+figure,
+picture {
+    margin: 0; 
+   
+}
+
+ /* when look up the design, there are a lot of word with normal weight so set 400 to default */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+/* set up the body */
+body {
+    font-family: var(--ff-sans-normal);
+    font-size: var(--fs-200);
+    background-color: hsl( var(--clr-white) );
+    color: hsl( var(--clr-dark) );
+    line-height: 1.5;
+    min-height: 100vh;
+   
+}
+
+/* make images easier to work with */
+img, 
+picutre {
+    max-width: 100%;
+    display: block;
+    
+
+}
+
+/* make form elements easier to work with */
+
+button
+{
+    font: inherit;
+}
+
+a{
+    text-decoration: none;
+    color: hsl( var(--clr-white) );
+    
+}
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.d-block{
+    display: block;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
+  }
+  
+  
+  
+  
+  /* colors */
+  
+  .bg-dark { background-color: hsl( var(--clr-dark) );}
+  .bg-accent { background-color: hsl( var(--clr-light) );}
+  .bg-white { background-color: hsl( var(--clr-white) );}
+  
+  .text-dark { color: hsl( var(--clr-dark) );}
+  .text-gray { color: hsl( var(--clr-gray) );}
+  .text-v-gray { color: hsl( var(--clr-vgray) );}
+  .text-white { color: hsl( var(--clr-white) );}
+  
+  /* typography */
+  
+  .ff-serif { font-family: var(--ff-alata); } 
+  .ff-sans-cond { font-family: var(--ff-sans-jose); } 
+  
+  
+  .uppercase { text-transform: uppercase; }
+  
+  .fs-900 { font-size: var(--fs-900); }
+  .fs-800 { font-size: var(--fs-800); }
+  .fs-700 { font-size: var(--fs-700); }
+  .fs-600 { font-size: var(--fs-600); }
+  .fs-500 { font-size: var(--fs-500); }
+  .fs-400 { font-size: var(--fs-400); }
+  .fs-300 { font-size: var(--fs-300); }
+  .fs-200 { font-size: var(--fs-200); }
+  .fs-100 { font-size: var(--fs-100);}
+  
+  .fs-900,
+  .fs-800,
+  .fs-700,
+  .fs-600 {
+      line-height: 1.1;
+  }
+
+  .fw-300{
+    font-weight: 300;
+  }
+
+.hero-section{
+    background-image: url(images/mobile/image-hero.jpg);
+    background-position: center bottom;
+    background-size: cover;
+    padding: 1.5rem;
+   
+}
+
+.logo{
+    z-index: 2000;
+    margin: 1rem;
+}
+
+.primary-header{
+    align-items: center;
+    justify-content: space-between;  
+}
+
+.primary-navigation{
+    list-style: none;
+    --gap:2rem
+}
+
+.mobile-nav-toggle{
+    display: none;
+}
+
+.underline-indicators > *{
+    border-bottom: .1rem solid hsl(0, 0%, 100%,0);
+    transition: border 500ms ease-in-out;
+}
+
+.underline-indicators > *:hover,
+.underline-indicators > *:focus{
+    border-color:hsl(0, 0%, 100%,100%);
+}
+
+.hero-content{
+    max-width: 37.5rem;
+    margin-block: 150px;
+}
+
+.hero-content p{
+    min-width: 12ch;
+    padding: 1.5rem;
+    font-size: 3rem;
+    line-height: 1.1;
+    color: white;
+    font-weight: 300;
+    font-family: "Josefin Sans", sans-serif;
+    border: .13rem solid hsl(var(--clr-white));
+}
+
+
+
+
+@media (min-width:768px){
+    .hero-section{
+        background-image: url(images/desktop/image-hero.jpg);
+        padding: 3rem 5rem;
+    }
+
+    .hero-content{
+        margin-block: 125px;
+    }
+    
+    .hero-content p{
+        
+        font-size: var(--fs-700);
+    }
+
+  
+}
+
+.leader-section {
+    display: grid;
+    place-items: center;
+    padding-block: clamp(5rem,15vw,8rem);
+    padding-inline: clamp(2rem,10vw,4rem);
+    text-align: center;
+}
+
+.image {
+    width: 100%;
+}
+
+.leader-content h1{
+    font-family: var(--ff-sans-jose);
+    font-size: var(--fs-600);
+    font-weight: 300;
+    line-height: 1;
+    margin-block: 2rem;
+}
+
+.leader-content p{
+    font-size: clamp(1rem,3vw,1.75rem);
+   font-weight: 200;
+}
+
+/* mobile navigation menu*/
+
+@media (max-width:48.125em){
+
+    .primary-navigation{
+        position: fixed;
+        inset: 0 0 0 0;
+        z-index: 1000;
+        background-color: black;
+        min-height: 100vh;
+        flex-direction: column;
+        padding: 15rem 3rem;
+        --gap:1rem;
+        transform: translateX(100%);
+        
+    }
+
+    .primary-navigation[data-visible='true']{
+        transform: translateX(0);
+    }
+
+
+    .primary-navigation a{
+        font-family: var(--ff-sans-jose);
+        font-size: 3rem;
+        font-weight: 200;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        background-image: url(images/icon-hamburger.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 0;
+        position: absolute;
+        top: 2rem;
+        right: 1rem;
+        width: 1.5rem;
+        aspect-ratio: 1;
+        z-index: 2000;
+        background-color: transparent;
+        border: 0;
+    }
+
+    .mobile-nav-toggle[aria-expanded='true']{
+        background-image: url(images/icon-close.svg);
+        
+    }
+}
+
+/* creation section */
+.creation {
+    padding-inline: clamp(4rem, 12vw, 8rem);
+    padding-bottom: 8rem;
+}
+
+/* layout for the whole things */
+.creation-container {
+   display: grid;
+}
+
+.creation-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    order: 1;
+}
+
+button{
+    display: block;
+    border-style: none;
+    border: 1px solid;
+    padding: 0.75rem 2.4rem;
+    background-color: inherit;
+    transition: color .5s, background-color .5s;
+    color: inherit;
+    letter-spacing: 5px;
+}
+
+.creation-btn {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    order: 3;
+}
+
+.cretion-gallery {
+    display: grid;
+    row-gap: 1.6rem;
+    order: 2;
+}
+
+.item{
+    height: 7.75rem;
+    padding: 1.25rem;
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.5rem;
+    color: #fff;
+    position: relative;
+}
+
+.item:nth-child(1){
+    background-image: url(images/mobile/image-deep-earth.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.item:nth-child(2){
+    background-image: url(images/mobile/image-night-arcade.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.item:nth-child(3){
+    background-image: url(images/mobile/image-soccer-team.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.item:nth-child(4){
+    background-image: url(images/mobile/image-grid.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.item:nth-child(5){
+    background-image: url(images/mobile/image-from-above.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.item:nth-child(6){
+    background-image: url(images/mobile/image-pocket-borealis.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.item:nth-child(7){
+    background-image: url(images/mobile/image-curiosity.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.item:nth-child(8){
+    background-image: url(images/mobile/image-fisheye.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.sub-title{
+    width: 50%;
+    position: absolute;
+}
+
+.footer{
+    padding-inline: clamp(3rem, 10vw, 8rem);
+    flex-direction: column;
+    align-items: center;
+    gap:2rem;
+}
+
+
+.left .logo{
+    margin-block: 2rem;
+    margin-inline: 0;
+}
+
+.links{
+    margin-left: -1.2rem;
+}
+
+.links ul{
+    flex-direction: column;
+    align-items: center;
+}
+
+.icons{
+    margin-bottom: 1rem;
+}
+
+.icons ul{
+    padding-inline-start: 2rem;
+    gap: 2rem;
+}
+
+
+
+
+@media (min-width:56.25em){
+    .cretion-gallery{
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 1.5rem;
+    }
+
+    .footer{
+        flex-direction: row;
+        
+        padding-block: 2rem;
+        justify-content: space-between;
+    }
+
+    .left .logo{
+        margin: 1rem;
+    }
+    
+    .left{
+        margin-left: -.5rem;
+    }
+
+    .links ul{
+        padding-inline-start: 2rem;
+        flex-direction: row;
+    }
+    
+  
+    .icons ul{
+        justify-content: end;
+    }
+}
+
+@media (min-width:64rem){
+
+    /* overlapping text on image */
+    .leader-section {
+        margin-block: 100px;
+        grid-template-columns: repeat(5,1fr);
+        width: 80%;
+        max-width: 1140px;
+        margin: 0 3rem;
+        padding-inline: 5rem;
+        text-align: left;
+    }
+    
+    .image , .leader-content {
+        grid-row: 1 / 2;
+    }
+    
+    .image {
+        grid-column: 1 / 5;
+       
+    }
+    
+    .leader-content {
+        grid-column: 3 / 6;
+        place-items: end;
+        align-self: end;
+    }
+    
+    .leader-content {
+        background-color: hsl(var(--clr-white));
+        width: 60ch;
+        padding-left: 4rem;
+        padding-top: clamp(1rem,2vw,3.5rem);
+        box-sizing: unset;
+       
+    }
+    
+    .leader-content h1{
+        margin-bottom: 1rem;
+    }
+
+    .leader-content p{
+        font-size: var(--fs-200);
+    }
+
+    .creation-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .creation-title {
+        justify-self: start;
+    }
+
+    .creation-btn{
+        order: 2;
+        margin-right: 0;
+        margin-top: 0;
+    }
+
+    .cretion-gallery{
+        grid-template-columns: repeat(4, 1fr);
+        order: 3;
+        grid-column: 1 / -1;
+    }
+
+    .item:nth-child(1){
+        background-image: url(images/desktop/image-deep-earth.jpg);
+        background-size: auto;
+    }
+
+    .item:nth-child(2){
+        background-image: url(images/desktop/image-night-arcade.jpg);
+        background-size: auto;
+    }
+    
+    .item:nth-child(3){
+        background-image: url(images/desktop/image-soccer-team.jpg);
+        background-size: auto;
+    }
+    
+    .item:nth-child(4){
+        background-image: url(images/desktop/image-grid.jpg);
+        background-size: auto;
+    }
+    
+    .item:nth-child(5){
+        background-image: url(images/desktop/image-from-above.jpg);
+        background-size: auto;
+    }
+    
+    .item:nth-child(6){
+        background-image: url(images/desktop/image-pocket-borealis.jpg);
+        background-size: auto;
+    }
+    
+    .item:nth-child(7){
+        background-image: url(images/desktop/image-curiosity.jpg);
+        background-size: auto;
+    }
+    
+    .item:nth-child(8){
+        background-image: url(images/desktop/image-fisheye.jpg);
+        background-size: auto;
+    }
+
+    .item{
+        max-width: 16rem;
+        height: 28.125rem;
+        cursor: pointer;
+        transform: scale(1);
+        font-size: 2rem;
+        
+    }
+}

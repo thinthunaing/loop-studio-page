@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Loopstudios landing page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 12px; text-align: center; background-color: black; color: white; padding: 2rem;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+
+  <script src="index.js" defer></script>
+</head>
+<body>
+  
+  <section class="hero-section">
+    <header class="primary-header flex">
+      <div class="logo"><img src="images/logo.svg" alt=""></div>
+      <button class="mobile-nav-toggle" aria-controls="primary-navigation"><span class="sr-only" aria-expanded="false">Menu</span></button>
+      <nav >
+        <ul data-visible="false" class="primary-navigation underline-indicators flex">
+          <li><a href="#" class="ff-serif fs-100">About</a></li>
+          <li><a href="#" class="ff-serif fs-100">Careers</a></li>
+          <li><a href="#" class="ff-serif fs-100">Events</a></li>
+          <li><a href="#" class="ff-serif fs-100">Products</a></li>
+          <li><a href="#" class="ff-serif fs-100">Support</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="hero-content">
+      <p class="uppercase"> Immersive experiences that deliver</p>
+    </div>
+  </section>
+
+  <section class="leader-section">
+      <img src="images/desktop/image-interactive.jpg" alt="" class="image">
+    <div class="leader-content">
+        <h1 class="uppercase">The leader in interactive VR</h1>
+        <p class="ff-serif text-v-gray">Founded in 2011, Loopstudios has been producing world-class virtual reality 
+        projects for some of the best companies around the globe. Our award-winning 
+        creations have transformed businesses through digital experiences that bind 
+        to their brand.</p>
+    </div>
+  </section>
+
+  <section class="creation">
+    <div class="creation-container">
+      <h2 class="creation-title ff-sans-cond uppercase fw-300">Our creations</h2>
+      <button class="creation-btn">See all</button>
+      <div class="cretion-gallery">
+        <div class="item"><span class="sub-title ff-sans-cond uppercase fw-300">Deep earth</span></div>
+        <div class="item"><span class="sub-title ff-sans-cond uppercase fw-300">Night arcade</span></div>
+        <div class="item"><span class="sub-title ff-sans-cond uppercase fw-300">Soccer team VR</span></div>
+        <div class="item"><span class="sub-title ff-sans-cond uppercase fw-300"> The grid</span></div>
+        <div class="item"><span class="sub-title ff-sans-cond uppercase fw-300">From up above VR</span></div>
+        <div class="item"><span class="sub-title ff-sans-cond uppercase fw-300">Pocket borealis</span></div>
+        <div class="item"><span class="sub-title ff-sans-cond uppercase fw-300">The curiosity</span></div>
+        <div class="item"><span class="sub-title ff-sans-cond uppercase fw-300">Make it fisheye</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer bg-dark flex">
+    <div class="left">
+      <div class="logo"><img src="images/logo.svg" alt=""></div>
+      <div class="links">
+        <ul class="underline-indicators flex">
+          <li><a href="#" class="ff-serif fs-100">About</a></li>
+          <li><a href="#" class="ff-serif fs-100">Careers</a></li>
+          <li><a href="#" class="ff-serif fs-100">Events</a></li>
+          <li><a href="#" class="ff-serif fs-100">Products</a></li>
+          <li><a href="#" class="ff-serif fs-100">Support</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="icons ">
+        <ul class="underline-indicators flex">
+          <li><img src="images/icon-facebook.svg" alt=""></li>
+          <li><img src="images/icon-twitter.svg" alt=""></li>
+          <li><img src="images/icon-pinterest.svg" alt=""></li>
+          <li><img src="images/icon-instagram.svg" alt=""></li>
+        </ul>
+      </div>
+      <p class="text-gray"> © 2021 Loopstudios. All rights reserved.</p>
+    </div>
+
+   
+  </footer>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Thin Thu Naing</a>.
+  </div>
+
+ 
+</body>
+</html>
